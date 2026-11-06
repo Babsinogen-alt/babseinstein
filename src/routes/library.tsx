@@ -77,7 +77,7 @@ function LibraryBody() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `quire-${today}.json`;
+    link.download = `babseinstein-${today}.json`;
     link.click();
     URL.revokeObjectURL(url);
   };
@@ -262,7 +262,7 @@ function LibraryBody() {
               reader.onload = () => {
                 try {
                   const parsed: unknown = JSON.parse(String(reader.result));
-                  setNotice(importSnapshot(parsed) ? "Backup restored on this device." : "That file is not a Quire backup.");
+                  setNotice(importSnapshot(parsed) ? "Backup restored on this device." : "That file is not a Babseinstein backup.");
                 } catch {
                   setNotice("That file could not be read.");
                 }

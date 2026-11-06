@@ -25,7 +25,7 @@ function Waiting() {
       <PageHeader
         kicker="Study desk"
         title="Retrieval, then a gap. Not another reading."
-        lede="Quire runs the methods with the strongest evidence: practice testing, spacing, and the supports around them. Your cards stay on this device."
+        lede="Babseinstein runs the methods with the strongest evidence: practice testing, spacing, and the supports around them. Your cards stay on this device."
       />
       <p className="text-sm text-muted">Opening today’s desk.</p>
     </>
@@ -148,7 +148,7 @@ function Desk() {
           <h2 className="font-serif text-xl text-ink">Confidence against the grade</h2>
           <p className="mt-2 text-sm leading-relaxed text-muted">
             {line ??
-              "After a few graded cards, Quire will tell you if “certain” is running ahead of what you can produce."}
+              "After a few graded cards, Babseinstein will tell you if “certain” is running ahead of what you can produce."}
           </p>
           {lastSummary ? (
             <p className="mt-4 text-sm leading-relaxed text-ink">

@@ -1,10 +1,10 @@
-# Quire
+# Babseinstein
 
 A study desk for retrieval practice, spacing, and the other methods with real evidence. Cards stay on the device where you study.
 
 ## On a phone
 
-The installable Android package is `Quire.apk` (package name `com.babsinogen.quire`). It is a wrapper around this app, not a Play Store listing. Download it, open it, and allow the install if Android asks. Cards in that app are not the cards in a browser preview.
+The installable Android package is `Babseinstein.apk` (package name `com.babsinogen.quire`). It is a wrapper around this app, not a Play Store listing. Download it, open it, and allow the install if Android asks. Cards in that app are not the cards in a browser preview.
 
 ## Run the site
 

@@ -67,7 +67,7 @@ export function Shell({ children }: { children: ReactNode }) {
 function Wordmark() {
   return (
     <Link to="/" className="inline-flex items-baseline gap-2">
-      <span className="font-serif text-2xl tracking-tight text-ink">Quire</span>
+      <span className="font-serif text-2xl tracking-tight text-ink">Babseinstein</span>
       <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
     </Link>
   );

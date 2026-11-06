@@ -2,7 +2,7 @@ import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
   appId: "com.babsinogen.quire",
-  appName: "Quire",
+  appName: "Babseinstein",
   webDir: "dist/client",
   server: {
     androidScheme: "https",
