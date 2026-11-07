@@ -4,7 +4,13 @@ A study desk for retrieval practice, spacing, and the other methods with real ev
 
 ## On a phone
 
-The installable Android package is `Babseinstein.apk` (package name `com.babsinogen.quire`). It is a wrapper around this app, not a Play Store listing. Download it, open it, and allow the install if Android asks. Cards in that app are not the cards in a browser preview.
+Download the Android package from the release, not from the source files:
+
+[Babseinstein.apk](https://github.com/Babsinogen-alt/babseinstein/releases/latest/download/Babseinstein.apk)
+
+Open that file on the phone. Android will warn that it did not come from the Play Store. Allow the browser or Files to install unknown apps, then open the file again. The app name under the icon is Babseinstein.
+
+Cards in that install stay on the phone. They are not the cards in a browser.
 
 ## Run the site
 
