@@ -1,9 +1,11 @@
+import { useEffect } from "react";
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
 const APP_NAME = "Babseinstein";
+const wrapper = import.meta.env.VITE_WRAPPER === "true";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -17,9 +19,10 @@ export const Route = createRootRoute({
           "A study desk built from retrieval practice, spacing, interleaving, and the other methods with real evidence.",
       },
       { name: "theme-color", content: "#F4EFE6" },
+      { name: "apple-mobile-web-app-title", content: APP_NAME },
     ],
     links: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/svg+xml", href: wrapper ? "./favicon.svg" : "/favicon.svg" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -27,11 +30,25 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap",
       },
-      { rel: "manifest", href: "/__grok/manifest.webmanifest" },
-      { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
+      {
+        rel: "manifest",
+        href: wrapper ? "./manifest.webmanifest" : "/__grok/manifest.webmanifest",
+      },
+      {
+        rel: "apple-touch-icon",
+        href: wrapper ? "./icon-192.png" : "/__grok/icon-180.png",
+      },
     ],
   }),
-  component: () => (
+  component: RootDocument,
+});
+
+function RootDocument() {
+  useEffect(() => {
+    if (!wrapper || !("serviceWorker" in navigator)) return;
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  }, []);
+  return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
@@ -44,5 +61,5 @@ export const Route = createRootRoute({
         <Scripts />
       </body>
     </html>
-  ),
-});
+  );
+}

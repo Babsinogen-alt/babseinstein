@@ -8,7 +8,7 @@ On a computer or a phone, open this address. It is the app. Nothing has to be in
 
 [babsinogen-alt.github.io/babseinstein](https://babsinogen-alt.github.io/babseinstein/)
 
-A laptop cannot install an Android package, so do not download the `.apk` on a computer. On a phone, the same address opens in the browser. In Chrome, the menu has Add to Home screen if you want an icon.
+A laptop cannot install an Android package, so do not download the `.apk` on a computer. On a phone, the same address opens in the browser. If a Babseinstein icon is already there and says the app cannot open, long-press that icon and remove it. Then open the address again in Chrome. Use the menu and choose Install or Add to Home screen only after the page itself is open.
 
 ## Android file
 
