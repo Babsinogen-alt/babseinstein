@@ -1,4 +1,4 @@
-# Babseinstein
+# Focus
 
 A study desk for retrieval practice, spacing, and the other methods with real evidence. Cards stay on the device where you study.
 
@@ -8,13 +8,13 @@ On a computer or a phone, open this address. It is the app. Nothing has to be in
 
 [babsinogen-alt.github.io/babseinstein](https://babsinogen-alt.github.io/babseinstein/)
 
-A laptop cannot install an Android package, so do not download the `.apk` on a computer. On a phone, the same address opens in the browser. If a Babseinstein icon is already there and says the app cannot open, long-press that icon and remove it. Then open the address again in Chrome. Use the menu and choose Install or Add to Home screen only after the page itself is open.
+A laptop cannot install an Android package, so do not download the `.apk` on a computer. On a phone, the same address opens in the browser. If a Focus icon is already there and says the app cannot open, long-press that icon and remove it. Then open the address again in Chrome. Use the menu and choose Install or Add to Home screen only after the page itself is open.
 
 ## Android file
 
 The installable package, only for an Android phone, is on the release:
 
-[Babseinstein.apk](https://github.com/Babsinogen-alt/babseinstein/releases/latest/download/Babseinstein.apk)
+[Focus.apk](https://github.com/Babsinogen-alt/babseinstein/releases/latest/download/Babseinstein.apk)
 
 Open that file on the phone. Android will warn that it did not come from the Play Store. Allow the browser or Files to install unknown apps, then open the file again.
 

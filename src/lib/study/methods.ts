@@ -217,7 +217,7 @@ export const METHODS: Method[] = [
     grade: "Supportive",
     source: "Diekelmann & Born, 2010",
     summary:
-      "Sleep after learning stabilizes memory. Another hour of midnight rereading is a poor trade for it. Babseinstein cannot sleep for you. It can refuse to call a cram session a plan.",
+      "Sleep after learning stabilizes memory. Another hour of midnight rereading is a poor trade for it. Focus cannot sleep for you. It can refuse to call a cram session a plan.",
     inQuire: "Cards you secured today leave until their date. The plan does not offer a “restudy everything tonight” button.",
     to: "/plan",
   },
@@ -239,7 +239,7 @@ export const METHODS: Method[] = [
     source: "Bjork, 1994",
     summary:
       "This is the frame around the techniques above, not a separate drill. Conditions that make performance worse today often make memory better next week. Performance in the chair is the wrong score.",
-    inQuire: "Babseinstein will not show you a streak, a score, or a celebration for fast correct answers. Slow and correct is the work.",
+    inQuire: "Focus will not show you a streak, a score, or a celebration for fast correct answers. Slow and correct is the work.",
     to: "/",
   },
 ];

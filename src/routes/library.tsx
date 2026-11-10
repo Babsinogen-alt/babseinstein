@@ -262,7 +262,7 @@ function LibraryBody() {
               reader.onload = () => {
                 try {
                   const parsed: unknown = JSON.parse(String(reader.result));
-                  setNotice(importSnapshot(parsed) ? "Backup restored on this device." : "That file is not a Babseinstein backup.");
+                  setNotice(importSnapshot(parsed) ? "Backup restored on this device." : "That file is not a Focus backup.");
                 } catch {
                   setNotice("That file could not be read.");
                 }

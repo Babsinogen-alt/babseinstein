@@ -4,7 +4,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Babseinstein";
+const APP_NAME = "Focus";
 const wrapper = import.meta.env.VITE_WRAPPER === "true";
 
 export const Route = createRootRoute({
