@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GuideRouteImport } from './routes/guide'
 import { Route as LibraryRouteImport } from './routes/library'
 import { Route as MethodsRouteImport } from './routes/methods'
 import { Route as PlanRouteImport } from './routes/plan'
@@ -18,6 +19,11 @@ import { Route as PracticeRouteImport } from './routes/practice'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuideRoute = GuideRouteImport.update({
+  id: '/guide',
+  path: '/guide',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LibraryRoute = LibraryRouteImport.update({
@@ -43,6 +49,7 @@ const PracticeRoute = PracticeRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/guide': typeof GuideRoute
   '/library': typeof LibraryRoute
   '/methods': typeof MethodsRoute
   '/plan': typeof PlanRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/guide': typeof GuideRoute
   '/library': typeof LibraryRoute
   '/methods': typeof MethodsRoute
   '/plan': typeof PlanRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/guide': typeof GuideRoute
   '/library': typeof LibraryRoute
   '/methods': typeof MethodsRoute
   '/plan': typeof PlanRoute
@@ -65,14 +74,22 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/library' | '/methods' | '/plan' | '/practice'
+  fullPaths: '/' | '/guide' | '/library' | '/methods' | '/plan' | '/practice'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/library' | '/methods' | '/plan' | '/practice'
-  id: '__root__' | '/' | '/library' | '/methods' | '/plan' | '/practice'
+  to: '/' | '/guide' | '/library' | '/methods' | '/plan' | '/practice'
+  id:
+    | '__root__'
+    | '/'
+    | '/guide'
+    | '/library'
+    | '/methods'
+    | '/plan'
+    | '/practice'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GuideRoute: typeof GuideRoute
   LibraryRoute: typeof LibraryRoute
   MethodsRoute: typeof MethodsRoute
   PlanRoute: typeof PlanRoute
@@ -86,6 +103,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guide': {
+      id: '/guide'
+      path: '/guide'
+      fullPath: '/guide'
+      preLoaderRoute: typeof GuideRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/library': {
@@ -121,6 +145,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GuideRoute: GuideRoute,
   LibraryRoute: LibraryRoute,
   MethodsRoute: MethodsRoute,
   PlanRoute: PlanRoute,

@@ -115,6 +115,9 @@ function GuideSheet({ onClose }: { onClose: () => void }) {
             <li key={step}>{step}</li>
           ))}
         </ol>
+        <Link to="/guide" className="mt-4 inline-flex min-h-11 items-center text-sm text-secure underline decoration-line underline-offset-4" onClick={onClose}>
+          First time here
+        </Link>
         <button
           type="button"
           className="mt-5 min-h-11 text-sm text-secure underline decoration-line underline-offset-4"

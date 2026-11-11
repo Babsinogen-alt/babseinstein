@@ -60,7 +60,11 @@ function Desk() {
         <Now>{nextLine(open, due, fresh)}</Now>
         {showGuide ? (
           <p className="mt-3 text-sm leading-relaxed text-muted">
-            Write the answer, then show it, then grade it. Tap Focus for the order.{" "}
+            Write the answer, then show it, then grade it.{" "}
+            <Link to="/guide" className="text-secure underline decoration-line underline-offset-4">
+              First time here
+            </Link>
+            .{" "}
             <button
               type="button"
               className="min-h-11 text-secure underline decoration-line underline-offset-4"
