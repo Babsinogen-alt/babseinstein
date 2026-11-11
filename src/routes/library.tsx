@@ -8,7 +8,13 @@ import { isNew } from "@/lib/study/schedule";
 import { snapshotOf, useStudy } from "@/lib/study/store";
 import type { Card, CardType } from "@/lib/study/types";
 
-export const Route = createFileRoute("/library")({ component: LibraryPage });
+export const Route = createFileRoute("/library")({
+  validateSearch: (search: Record<string, unknown>): { subject?: string } => {
+    const subject = typeof search.subject === "string" && search.subject ? search.subject : undefined;
+    return subject ? { subject } : {};
+  },
+  component: LibraryPage,
+});
 
 const TYPES: { id: CardType; label: string }[] = [
   { id: "recall", label: "Retrieval" },
@@ -39,6 +45,7 @@ function LibraryPage() {
 
 function LibraryBody() {
   const today = dayKey();
+  const { subject } = Route.useSearch();
   const subjects = useStudy((s) => s.subjects);
   const cards = useStudy((s) => s.cards);
   const addSubject = useStudy((s) => s.addSubject);
@@ -49,7 +56,7 @@ function LibraryBody() {
   const restoreSamples = useStudy((s) => s.restoreSamples);
   const importSnapshot = useStudy((s) => s.importSnapshot);
 
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState(subject && subjects.some((item) => item.id === subject) ? subject : "all");
   const [query, setQuery] = useState("");
   const [subjectName, setSubjectName] = useState("");
   const [open, setOpen] = useState(false);
